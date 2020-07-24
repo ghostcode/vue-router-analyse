@@ -52,6 +52,7 @@ export default class VueRouter {
     this.app = app
 
     const { mode, options, fallback } = this
+    // 根据 mode 的类型选择合适的路由实现方式
     switch (mode) {
       case 'history':
         this.history = new HTML5History(this, options.base)
@@ -111,6 +112,7 @@ export default class VueRouter {
   }
 }
 
+// 添加install 方法，为何不在上面加呢？
 VueRouter.install = install
 
 if (inBrowser && window.Vue) {
